@@ -9,7 +9,8 @@ using System.Threading.Tasks;
  * Date : June 2th, 2016
  * Date Modified: Jun 9th, 2016
  * Description : Assignment 2
- * Version : 0.3 - Added _generateRandomPowers() method
+ * Version : 0.4 - 
+ *                  Get private method _generateRandomPowers() working;
  */
 namespace Assignment_2_Superhero_Class
 {
@@ -52,8 +53,20 @@ namespace Assignment_2_Superhero_Class
             Elementalist.Show();
             Elementalist.Fight();
 
-            SuperHero Test = new SuperHero();
-            Test._generateRandomPowers();
+            SuperHero Test = new SuperHero("Test");
+            Test.Show();
+            Test.Fight();
+            
+
+            SuperHero Test2 = new SuperHero("Test2");
+            Test2.Show();
+            Test2.Fight();
+            
+
+            SuperHero Test3 = new SuperHero("Test3");
+            Test3.Show();
+            Test3.Fight();
+            Test3.ShowPowers();
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Assignment_2_Superhero_Class
     class SuperHero : Hero
     {
         //RANDOM NUMBER GENERATOR=========================================================
-        Random random = new Random();
+        Random random = new Random(Guid.NewGuid().GetHashCode());
         // PRIVATE INSTANCE VARIABLES=====================================================
         private string[] _superPowers;
         // PUBLIC PROPERTIES==============================================================
@@ -34,28 +34,39 @@ namespace Assignment_2_Superhero_Class
             }
         }
         // PRIVATE METHODS===================================================================
-        public void _generateRandomPowers()
+        private void _generateRandomPowers()
         {
             string[] superPowers = new string[] { "Super Speed", "Super Strength", "Body Armour", "Flight", "Fire Generation", "Weather Control"};
-            for (int n = 0; n < 2; n++)
+            _superPowers = superPowers;
+            //List<string> SuperPowerPool = new List<string>(superPowers);
+
+            int powerCount = superPowers.Length;
+
+            for (int currentpower = 0; currentpower < powerCount; currentpower++)
             {
-                int rnd = random.Next(0, 6);
-                string s = superPowers[rnd];
-                
-                Console.WriteLine("-> {0}", s);
+                string tempPower = superPowers[currentpower]; // copy current card to temp location
+                int randompower = random.Next(0, powerCount); // get a random card index
+                superPowers[currentpower] = superPowers[randompower]; // copy value from randomCard to currentCard
+                superPowers[randompower] = tempPower; // copy current card to random card
+
+            }
+
+            if (_superPowers.Length > 3)
+            {
+                string[] superPowergenerate = _superPowers.Skip(1).ToArray(); // remove the 0th Power from Super Power Pool
+                Console.WriteLine("-> {0} \n-> {1}\n-> {2}", _superPowers);
             }
         }
         // PUBLIC METHODS===================================================================
         public void ShowPowers()
         {
+            _generateRandomPowers();
 
         }
         // CONSTRUCTORS =====================================================================
-        public SuperHero()
+        public SuperHero(string name) : base(name)
         {
-            this.Name = "Unknown Name";
             _generateRandomPowers();
-
         }
     }
 }
