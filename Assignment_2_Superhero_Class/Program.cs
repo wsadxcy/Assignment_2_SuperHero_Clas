@@ -9,7 +9,12 @@ using System.Threading.Tasks;
  * Date : June 2th, 2016
  * Date Modified: Jun 9th, 2016
  * Description : Assignment 2
- * Version : 0.1 - Initial Version.
+ * Version : 0.2 - 
+ *              Added PRIVATE INSTANCE VARIABLE string array _superPowers;
+                Added PUBLIC PROPERTIE string array SuperPowers;
+                Added PRIVATE METHOD _generateRandomPowers();
+                Added PUBLIC METHOD ShowPowers();
+                Added DEFAULT CONSTRUCTOR SuerHero();.
  */
 namespace Assignment_2_Superhero_Class
 {
