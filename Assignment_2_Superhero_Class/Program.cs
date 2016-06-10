@@ -7,10 +7,11 @@ using System.Threading.Tasks;
 
 /* Author : Chenyuan Xie
  * Date : June 2th, 2016
- * Date Modified: Jun 9th, 2016
+ * Date Modified: Jun 10th, 2016
  * Description : Assignment 2
- * Version : 0.4 - 
- *                  Get private method _generateRandomPowers() working;
+ * Version : 0.5 - 
+ *                  Added _generateRandomEnemy method to hero class;
+                    Deleted Superpower Class;
  */
 namespace Assignment_2_Superhero_Class
 {
@@ -56,12 +57,12 @@ namespace Assignment_2_Superhero_Class
             SuperHero Test = new SuperHero("Test");
             Test.Show();
             Test.Fight();
-            
+            Test.ShowPowers();
 
             SuperHero Test2 = new SuperHero("Test2");
             Test2.Show();
             Test2.Fight();
-            
+            Test2.ShowPowers();
 
             SuperHero Test3 = new SuperHero("Test3");
             Test3.Show();

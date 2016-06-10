@@ -21,6 +21,11 @@ namespace Assignment_2_Superhero_Class
         // PRIVATE INSTANCE VARIABLES=====================================================
         private string[] _superPowers;
         // PUBLIC PROPERTIES==============================================================
+        /**
+         * This is the public property for private _superPowers field
+         * 
+         * @property {string[]} SuperPowers
+         */
         public string[] SuperPowers
         {
             get
@@ -34,34 +39,40 @@ namespace Assignment_2_Superhero_Class
             }
         }
         // PRIVATE METHODS===================================================================
+        /**
+         * <summary>
+         * This method randomly generate and  a string of Superpower, and remove superpower until 3 left
+         * </summary>
+         * 
+         * @method _generateRandomPowers
+         * @returns {void}
+         */
         private void _generateRandomPowers()
         {
             string[] superPowers = new string[] { "Super Speed", "Super Strength", "Body Armour", "Flight", "Fire Generation", "Weather Control"};
             _superPowers = superPowers;
-            //List<string> SuperPowerPool = new List<string>(superPowers);
 
             int powerCount = superPowers.Length;
 
             for (int currentpower = 0; currentpower < powerCount; currentpower++)
             {
-                string tempPower = superPowers[currentpower]; // copy current card to temp location
-                int randompower = random.Next(0, powerCount); // get a random card index
-                superPowers[currentpower] = superPowers[randompower]; // copy value from randomCard to currentCard
-                superPowers[randompower] = tempPower; // copy current card to random card
-
+                string tempPower = superPowers[currentpower]; // copy current power to temp location
+                int randompower = random.Next(0, powerCount); // get a random power index
+                superPowers[currentpower] = superPowers[randompower]; // copy value from randompower to currentpower
+                superPowers[randompower] = tempPower; // copy current power to random power
             }
 
             if (_superPowers.Length > 3)
             {
                 string[] superPowergenerate = _superPowers.Skip(1).ToArray(); // remove the 0th Power from Super Power Pool
-                Console.WriteLine("-> {0} \n-> {1}\n-> {2}", _superPowers);
             }
         }
         // PUBLIC METHODS===================================================================
         public void ShowPowers()
         {
-            _generateRandomPowers();
-
+            Console.WriteLine();
+            Console.WriteLine("-> {0} \n-> {1}\n-> {2}", _superPowers);
+            Console.WriteLine();
         }
         // CONSTRUCTORS =====================================================================
         public SuperHero(string name) : base(name)

@@ -20,6 +20,7 @@ namespace Assignment_2_Superhero_Class
         private int _strength;
         private int _speed;
         private int _health;
+        private string[] _enemys;
 
         // PUBLIC PROPERTIES==============================================================
         /**
@@ -38,6 +39,19 @@ namespace Assignment_2_Superhero_Class
                 this._name = value;
             }
         }
+
+        public string[] Enemys
+        {
+            get
+            {
+                return this._enemys;
+            }
+
+            set
+            {
+                this._enemys = value;
+            }
+        }
         // CONSTRUCTORS =====================================================================
 
         /**
@@ -51,7 +65,7 @@ namespace Assignment_2_Superhero_Class
         {
             this.Name = "Unknown Name";
             _generateAbilities();
-
+            _generateRandomEnemy();
         }
 
         /**
@@ -67,6 +81,7 @@ namespace Assignment_2_Superhero_Class
         {
             this.Name = name;
             _generateAbilities();
+            _generateRandomEnemy();
         }
         // PRIVATE METHODS===================================================================
 
@@ -122,6 +137,27 @@ namespace Assignment_2_Superhero_Class
             return FinDam;
         }
 
+        private void _generateRandomEnemy()
+        {
+            string[] enemy = new string[] { "Goblin", "Orc", "Spider", "Skeleton", "Zombie", "Bat" };
+            _enemys = enemy;
+
+            int enemyCount = enemy.Length;
+
+            for (int currentenemy = 0; currentenemy < enemyCount; currentenemy++)
+            {
+                string tempEnemy = enemy[currentenemy]; // copy current power to temp location
+                int randomenemy = random.Next(0, enemyCount); // get a random power index
+                enemy[currentenemy] = enemy[randomenemy]; // copy value from randompower to currentpower
+                enemy[randomenemy] = tempEnemy; // copy current power to random power
+            }
+
+            if (_enemys.Length > 1)
+            {
+                string[] enemygenerate = _enemys.Skip(1).ToArray(); // remove the 0th Power from Super Power Pool 
+            }
+        }
+
         //PUBLIC METHODS====================================================================
 
         /**
@@ -138,12 +174,12 @@ namespace Assignment_2_Superhero_Class
             if
                 (hit == true)
             {
-
-                Console.WriteLine("\n" + this.Name + " Deals " + _hitDamage() + " Damage to target enemy.");
+                Console.WriteLine("\nHero " + this.Name + " Deals " + _hitDamage() + " Damage to " + "{0}", _enemys);
             }
             else
             {
-                Console.WriteLine("\n" + this.Name + " Missed");
+                Console.WriteLine("\nHero " + this.Name + " Missed");
+                Console.WriteLine("Target enemy is {0}", _enemys);
             }
         }
 
@@ -157,7 +193,15 @@ namespace Assignment_2_Superhero_Class
         */
         public void Show()
         {
-            Console.WriteLine("*****************\nHero : " + this.Name + "     \n*Strength : " + _strength + "   \n*Speed : " + _speed + "   \nHealth : " + _health + "   \n*****************");
+            string bar = new string('=',65);
+            string strengthbar = new String('█', _strength/4);
+            string speedbar = new String('█', _speed/4);
+            string healthbar = new String('█', _health/4);
+            Console.WriteLine(bar + "\n*Hero : " + this.Name);
+            Console.WriteLine("*Strength : " + _strength + strengthbar);
+            Console.WriteLine("*Speed : " + _speed + speedbar);
+            Console.WriteLine("*Health : " + _health + healthbar + "\n" + bar);
+
         }
     }
 }
