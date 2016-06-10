@@ -16,8 +16,10 @@ namespace Assignment_2_Superhero_Class
      */
     class SuperHero : Hero
     {
+        //RANDOM NUMBER GENERATOR=========================================================
+        Random random = new Random();
         // PRIVATE INSTANCE VARIABLES=====================================================
-        private string[] _superPowers = new string[] { "Super	Speed", "Super	Strength", "Body	Armour", "Flight", "Fire	Generation", "Weather	Control" };
+        private string[] _superPowers;
         // PUBLIC PROPERTIES==============================================================
         public string[] SuperPowers
         {
@@ -32,9 +34,16 @@ namespace Assignment_2_Superhero_Class
             }
         }
         // PRIVATE METHODS===================================================================
-        private void _generateRandomPowers()
+        public void _generateRandomPowers()
         {
-
+            string[] superPowers = new string[] { "Super Speed", "Super Strength", "Body Armour", "Flight", "Fire Generation", "Weather Control"};
+            for (int n = 0; n < 2; n++)
+            {
+                int rnd = random.Next(0, 6);
+                string s = superPowers[rnd];
+                
+                Console.WriteLine("-> {0}", s);
+            }
         }
         // PUBLIC METHODS===================================================================
         public void ShowPowers()
