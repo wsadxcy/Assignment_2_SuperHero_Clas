@@ -87,10 +87,13 @@ namespace Assignment_2_Superhero_Class
         // CONSTRUCTORS =====================================================================
         /**
         * <summary>
-        * This is the default constructor for the Hero class
-        * It calls private _generateRandomPowers Method
+        * This is the default constructor for the SuperHero class
+        * This constructor calls private _generateRandomPowers Method
+        * This constructor takes one parameter: name
         * </summary>
         * 
+        * @extends Hero
+        * @param {string} name
         * @constructor SuperHero
         */
         public SuperHero(string name) : base(name)
