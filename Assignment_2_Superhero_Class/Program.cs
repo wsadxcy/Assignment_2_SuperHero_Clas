@@ -9,9 +9,8 @@ using System.Threading.Tasks;
  * Date : June 2th, 2016
  * Date Modified: Jun 10th, 2016
  * Description : Assignment 2
- * Version : 0.5 - 
- *                  Added _generateRandomEnemy method to hero class;
-                    Deleted Superpower Class;
+ * Version : 0.6 - 
+ *                  Added documentary for everything.
  */
 namespace Assignment_2_Superhero_Class
 {
@@ -30,6 +29,7 @@ namespace Assignment_2_Superhero_Class
          */
         static void Main(string[] args)
         {
+            
             Hero Slasher = new Hero();
             Slasher.Name = "Slasher";
             Slasher.Show();
@@ -54,20 +54,21 @@ namespace Assignment_2_Superhero_Class
             Elementalist.Show();
             Elementalist.Fight();
 
-            SuperHero Test = new SuperHero("Test");
-            Test.Show();
-            Test.Fight();
-            Test.ShowPowers();
+            SuperHero Superman = new SuperHero("Superman");
+            Superman.Show();
+            Superman.ShowPowers();
+            Superman.Fight();
 
-            SuperHero Test2 = new SuperHero("Test2");
-            Test2.Show();
-            Test2.Fight();
-            Test2.ShowPowers();
-
-            SuperHero Test3 = new SuperHero("Test3");
-            Test3.Show();
-            Test3.Fight();
-            Test3.ShowPowers();
+            SuperHero Batman = new SuperHero("Batman");
+            Batman.Show();
+            Batman.ShowPowers();
+            Batman.Fight();
+            
+            SuperHero Punisher = new SuperHero("Punisher");
+            Punisher.Show();
+            Punisher.ShowPowers();
+            Punisher.Fight();
+            
         }
     }
 }

@@ -68,13 +68,31 @@ namespace Assignment_2_Superhero_Class
             }
         }
         // PUBLIC METHODS===================================================================
+
+        /**
+        * <summary>
+        * This method outputs the Name and _superpower of a superhero to the console.
+        * </summary>
+        * 
+        * @method ShowPowers
+        * @returns {void}
+        */
         public void ShowPowers()
         {
             Console.WriteLine();
+            Console.WriteLine("Super Hero " + Name + "'s super powers are : ");
             Console.WriteLine("-> {0} \n-> {1}\n-> {2}", _superPowers);
             Console.WriteLine();
         }
         // CONSTRUCTORS =====================================================================
+        /**
+        * <summary>
+        * This is the default constructor for the Hero class
+        * It calls private _generateRandomPowers Method
+        * </summary>
+        * 
+        * @constructor SuperHero
+        */
         public SuperHero(string name) : base(name)
         {
             _generateRandomPowers();

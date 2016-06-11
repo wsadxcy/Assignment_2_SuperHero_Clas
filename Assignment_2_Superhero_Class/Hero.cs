@@ -40,6 +40,11 @@ namespace Assignment_2_Superhero_Class
             }
         }
 
+        /**
+         * This is the public property for private enemy field
+         * 
+         * @property {string[]} Enemy
+         */
         public string[] Enemys
         {
             get
@@ -137,6 +142,14 @@ namespace Assignment_2_Superhero_Class
             return FinDam;
         }
 
+        /**
+         * <summary>
+         * This method randomly generate and  a string of Enemy, and remove enemy until 1 left
+         * </summary>
+         * 
+         * @method _generateRandomEnemy
+         * @returns {void}
+         */
         private void _generateRandomEnemy()
         {
             string[] enemy = new string[] { "Goblin", "Orc", "Spider", "Skeleton", "Zombie", "Bat" };
@@ -162,7 +175,7 @@ namespace Assignment_2_Superhero_Class
 
         /**
         * <summary>
-        * This method outputs the _hitDamage value to the console.
+        * This method outputs the _hitDamage, _hitAttempt and attacking enemy value to the console.
         * </summary>
         * 
         * @method Fight
@@ -174,12 +187,14 @@ namespace Assignment_2_Superhero_Class
             if
                 (hit == true)
             {
-                Console.WriteLine("\nHero " + this.Name + " Deals " + _hitDamage() + " Damage to " + "{0}", _enemys);
+                Console.WriteLine("A hostile creature has appeared.\nOur hero attacked the creature.");
+                Console.WriteLine("Hero " + this.Name + " Deals " + _hitDamage() + " Damage to " + "{0}" + "\n", _enemys);
             }
             else
             {
-                Console.WriteLine("\nHero " + this.Name + " Missed");
-                Console.WriteLine("Target enemy is {0}", _enemys);
+                Console.WriteLine("A hostile creature has appeared.\nOur hero attacked the creature.");
+                Console.WriteLine("Hero " + this.Name + " Missed");
+                Console.WriteLine("Target enemy is a/an {0}" + "\n", _enemys);
             }
         }
 
@@ -198,9 +213,9 @@ namespace Assignment_2_Superhero_Class
             string speedbar = new String('█', _speed/4);
             string healthbar = new String('█', _health/4);
             Console.WriteLine(bar + "\n*Hero : " + this.Name);
-            Console.WriteLine("*Strength : " + _strength + strengthbar);
-            Console.WriteLine("*Speed : " + _speed + speedbar);
-            Console.WriteLine("*Health : " + _health + healthbar + "\n" + bar);
+            Console.WriteLine("*Strength : "  + "" + strengthbar+ " " + _strength);
+            Console.WriteLine("*Speed : " +  "   " + speedbar + " " + _speed);
+            Console.WriteLine("*Health : "  + "  " + healthbar + " " + _health + "\n" + bar);
 
         }
     }
