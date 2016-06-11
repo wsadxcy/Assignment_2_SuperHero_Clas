@@ -9,9 +9,8 @@ using System.Threading.Tasks;
  * Date : June 2th, 2016
  * Date Modified: Jun 10th, 2016
  * Description : Assignment 2
- * Version : 1.0 - 
- *                  Updated Documentary;
-                    Finished;
+ * Version : 1.1 - 
+ *                  Change Git repo, update Documentary
  */
 namespace Assignment_2_Superhero_Class
 {

@@ -159,15 +159,15 @@ namespace Assignment_2_Superhero_Class
 
             for (int currentenemy = 0; currentenemy < enemyCount; currentenemy++)
             {
-                string tempEnemy = enemy[currentenemy]; // copy current power to temp location
-                int randomenemy = random.Next(0, enemyCount); // get a random power index
-                enemy[currentenemy] = enemy[randomenemy]; // copy value from randompower to currentpower
-                enemy[randomenemy] = tempEnemy; // copy current power to random power
+                string tempEnemy = enemy[currentenemy]; // copy current enemy to temp location
+                int randomenemy = random.Next(0, enemyCount); // get a random enemy index
+                enemy[currentenemy] = enemy[randomenemy]; // copy value from randomenemy to currenenemy
+                enemy[randomenemy] = tempEnemy; // copy current enemy to random enemy
             }
 
             if (_enemys.Length > 1)
             {
-                string[] enemygenerate = _enemys.Skip(1).ToArray(); // remove the 0th Power from Super Power Pool 
+                string[] enemygenerate = _enemys.Skip(1).ToArray(); // remove the 0th enemy from enemy Pool 
             }
         }
 
